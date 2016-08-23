@@ -1,6 +1,6 @@
 # rc2016s_g2
 
-# Nature Of Mistery(NoM) 「大自然の神秘（仮）」
+Nature Of Mistery(NoM) 「大自然の神秘（仮）」
 
 システム
 ・時間　→トータルスコア
