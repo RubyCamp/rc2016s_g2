@@ -7,7 +7,7 @@ Window.caption = "RubyCamp Reincarnation"
 Window.width   = 800
 Window.height  = 600
 
-Scene.set_current_scene(:fishgame)
+Scene.set_current_scene(:title)
 
 Window.loop do
   break if Input.keyPush?(K_ESCAPE)
