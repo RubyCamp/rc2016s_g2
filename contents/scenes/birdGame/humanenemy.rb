@@ -1,7 +1,7 @@
 class HumanEnemy < Sprite
   def initialize(x, y, image = nil)
     image = Image.load("images/human/human1_min.png") #相対パスはmain.rbからのものを指定
-    image.set_color_key([255, 255, 255])
+    image.set_color_key([248, 247, 243])
     super
     @dx = 1
   end

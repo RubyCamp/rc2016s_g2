@@ -1,6 +1,6 @@
 class Fishenemy < Sprite
   def initialize(x, y, image = nil)
-    image = Image.load("images/fish/fish-mouth.png") #相対パスはmain.rbからのものを指定
+    image = Image.load("images/fish/sdfa.png") #相対パスはmain.rbからのものを指定
     image.set_color_key([255, 255, 255])
     super
     @dx = 1
