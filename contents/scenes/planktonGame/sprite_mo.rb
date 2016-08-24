@@ -19,3 +19,4 @@ class Mo < Sprite
     self.vanish if obj.is_a?(Fishenemy)
   end
 end
+

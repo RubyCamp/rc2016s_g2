@@ -1,7 +1,7 @@
 class Plankton < Sprite
 
   def initialize
-    image = Image.load("images/plankton/s_virus(black).png")
+    image = Image.load("images/plankton/new_virus(black).png")
     image.set_color_key(C_WHITE)
     @dy=0
     super(360,400,image)
@@ -23,3 +23,5 @@ class Plankton < Sprite
     end
   end
 end
+
+

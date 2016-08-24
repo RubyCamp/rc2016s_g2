@@ -13,3 +13,4 @@ Scene.add_scene(Scene1::Director.new,  :scene1)
 Scene.add_scene(Scene2::Director.new,  :scene2)
 #bard
 Scene.add_scene(Ending::Director.new,  :ending)
+
