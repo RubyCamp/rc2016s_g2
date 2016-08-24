@@ -1,4 +1,5 @@
 require_relative'birdplayer'
+require_relative'humanenemy'
 
 module BirdGame
   class Director
@@ -6,7 +7,7 @@ module BirdGame
       @bg_img = Image.load("images/plankton/background-plankton.png")
       @chars = []
       @chars << BirdPlayer.new(200, 200)
-      #@chars << Mo.new(700, rand(600))
+      @chars << HumanEnemy.new(700, rand(600))
       #@timer = 30 * 60
       #@repoptime = 100
       #@repoptimer = @repoptime
