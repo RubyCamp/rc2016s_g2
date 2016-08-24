@@ -14,4 +14,3 @@ Window.loop do
 
   Scene.play_scene
 end
-

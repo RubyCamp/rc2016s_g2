@@ -4,10 +4,11 @@ require_relative'humanenemy'
 module BirdGame
   class Director
     def initialize
-      @bg_img = Image.load("images/plankton/background-plankton.png")
+      @bg_img = Image.load("images/bird/background-bird.png")
       @chars = []
       @chars << BirdPlayer.new(200, 200)
-      @chars << HumanEnemy.new(700, rand(600))
+      @chars << HumanEnemy.new(700, 400)
+      @chars << HumanEnemy.new(400, 400)
       #@timer = 30 * 60
       #@repoptime = 100
       #@repoptimer = @repoptime
