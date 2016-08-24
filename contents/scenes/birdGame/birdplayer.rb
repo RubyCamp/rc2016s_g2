@@ -26,6 +26,19 @@ class BirdPlayer < Sprite
 
     self.y += @dy
     self.x += @dx
+
+    if self.y <= -30
+      self.y = -30
+    elsif self.y >= Window.height - 200
+      self.y = Window.height - 200
+    end
+
+    if self.x <= -30
+      self.x = -30
+    elsif self.x >= Window.width - 200
+      self.x = Window.width - 200
+    end
+
   end
 
   def hit(obj)
