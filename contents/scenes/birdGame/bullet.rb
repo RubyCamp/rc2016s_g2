@@ -1,17 +1,18 @@
-class HumanEnemy < Sprite
-  def initialize(x, y, image = nil)
+class Bullet < Sprite
+  def initialize(x, y, image = nil, deg)
     image = Image.load("images/human/human1_min.png") #相対パスはmain.rbからのものを指定
     image.set_color_key([248, 247, 243])
     super
-    @dx = 2
+    #角度を初期化(degで与えた値をradianに)
+    @rad = deg * Math::PI / 180
+    @dx = 5
   end
 
   def update
-    #1割の確率で移動方向変更
-    if rand(9) == 5
-      @dx = -@dx
-    end
-    #self.x += (rand(3) + 1) * @dx
+    #角度に応じてまっすぐ進む
+    self.x += Math.cos(@rad)
+    self.y += Math.sin(@rad)
+    self.vanish if self.x >= Window.width
     #@dx = -@dx if self.x > (Window.width - self.image.width) || self.x < 0
   end
 
