@@ -1,7 +1,7 @@
 require_relative 'scene_utility'
 require_relative 'opening/director'
 require_relative 'fish-game-before/director'
-# require_relative 'fishGame/director'
+#require_relative 'fishGame/director'
 require_relative 'bird-game-before/director'
 require_relative 'ending/director'
 require_relative 'planktonGame/director'
