@@ -1,18 +1,21 @@
 class HumanEnemy < Sprite
   def initialize(x, y, image = nil)
-    image = Image.load("images/human/human1.png") #相対パスはmain.rbからのものを指定
-    image.set_color_key([0, 0, 0])
+    image = Image.load("images/human/human1_min.png") #相対パスはmain.rbからのものを指定
+    image.set_color_key([248, 247, 243])
     super
-    @dx = 1
+    @dx = 2
   end
 
   def update
+    if 
+      @dx = -@dx
+    end
     #self.x += (rand(3) + 1) * @dx
     #@dx = -@dx if self.x > (Window.width - self.image.width) || self.x < 0
   end
 
   def hit(obj)
-    image = Image.load("images/fish/fishenemymo2.png") #相対パスはmain.rbからのものを指定
-    image.set_color_key([0, 0, 0])
+    #image = Image.load("images/fish/fishenemymo2.png") #相対パスはmain.rbからのものを指定
+    #image.set_color_key([0, 0, 0])
   end
 end
