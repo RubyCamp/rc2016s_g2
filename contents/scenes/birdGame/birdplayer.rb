@@ -3,12 +3,29 @@ class BirdPlayer < Sprite
     image = Image.load("images/bird/dove.png") #相対パスはmain.rbからのものを指定
     image.set_color_key([10, 10, 10])
     super
-    @dx = 1
+    @dx = 0
+    @dy = 0
   end
 
   def update
-    #self.x += (rand(3) + 1) * @dx
-    #@dx = -@dx if self.x > (Window.width - self.image.width) || self.x < 0
+    if Input.key_down?(K_UP)
+      @dy = -3
+    elsif Input.key_down?(K_DOWN)
+      @dy = 3
+    else
+      @dy = 0
+    end
+
+    if Input.key_down?(K_RIGHT)
+      @dx = 3
+    elsif Input.key_down?(K_LEFT)
+      @dx = -3
+    else
+      @dx = 0
+    end
+
+    self.y += @dy
+    self.x += @dx
   end
 
   def hit(obj)
