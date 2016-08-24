@@ -19,7 +19,7 @@ class Plankton < Sprite
   	#　Moのサイズは、256*256（デフォルト）
     if obj.is_a?(Fishenemy) #　Fishenemyが当たったとき
       vanish
-      return
+      Scene.set_current_scene(:scene1)
     end
   end
 end

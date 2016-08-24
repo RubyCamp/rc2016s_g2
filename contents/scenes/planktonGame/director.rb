@@ -22,9 +22,9 @@ module PlanktonGame
       Sprite.draw(@chars)
       Sprite.clean(@chars)
       #@timer -= 1
-      #if @timer <= 0
-    #    Scene.set_current_scene(:fishgamebefore)
-    #  end
+     # if @timer
+     #   Scene.set_current_scene(:scene1)
+     # end
       @repoptimer -= 1
       if @repoptimer <= 0
         @repoptimer = @repoptime
