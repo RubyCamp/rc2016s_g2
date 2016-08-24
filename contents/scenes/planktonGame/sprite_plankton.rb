@@ -4,13 +4,24 @@ class Plankton < Sprite
     image = Image.load("images/plankton/new_virus(black).png")
     image.set_color_key(C_WHITE)
     @dy=0
-    super(360,400,image)
+    super(500,300,image)
   end
 
   def update
-    @dy = -1 if Input.key_push?(K_UP) 
-    @dy = 1  if Input.key_push?(K_DOWN) 
-    self.y += @dy
+    if Input.key_down?(K_UP) 
+       @dy = -1
+     elsif Input.key_down?(K_DOWN) 
+       @dy = 1 
+     else @dy = 0
+    end
+
+    self.y += @dy #　移動
+
+    if self.y <= -10 # 範囲の設定
+      self.y = -10
+    elsif self.y >= Window.height - 20
+      self.y = Window.height - 20 
+    end        
   end
 
   # 敵に当たったとき
@@ -23,5 +34,4 @@ class Plankton < Sprite
     end
   end
 end
-
 
