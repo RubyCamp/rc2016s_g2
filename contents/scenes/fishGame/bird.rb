@@ -1,14 +1,17 @@
-class Bird
-	def initialize(x, y, image_file)
+class Bird < Sprite
+	attr_reader :dx
+
+	def initialize(x, y, image = nil)
 		@x, @y = x, y
-		@image = Image.load(image_file)
-		@image.set_color_key([0, 0, 0])
+		@image = Image.load("images/bird/dove1.png")
+		image.set_color_key(C_WHITE)
+		super
 		@y = 1
-	end
+		end
+
 	def move
 		@y += @dy
 	end
-	def draw
-		Window.draw(@x, @y, @image)
+
+	self.vanish if obj.is_a?(y = 800)
 	end
-end
