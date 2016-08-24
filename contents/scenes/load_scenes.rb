@@ -1,13 +1,13 @@
 # require_relative 'scene_util'
 # require_relative 'title/director'
-require_relative 'fishGame/director'
+#require_relative 'fishGame/director'
 # require_relative 'scene2/director'
 # require_relative 'ending/director'
 
 # Scene.add_scene(Title::Director.new,  :title)
-Scene.add_scene(FishGame::Director.new,  :fishgame)
+#Scene.add_scene(FishGame::Director.new,  :fishgame)
 require_relative 'scene_utility'
-require_relative 'plankton-game/director'
+require_relative 'planktonGame/director'
 # require_relative 'scene1/director'
 # require_relative 'scene2/director'
 # require_relative 'ending/director'

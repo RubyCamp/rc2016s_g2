@@ -2,7 +2,7 @@ class Mo < Sprite
   attr_reader :dx
 
   def initialize(x, y, image = nil)
-    image = Image.load("images/mo2.png")
+    image = Image.load("images/seamo/mo2.png")
     image.set_color_key(C_WHITE)
     super
     @dx = -1
