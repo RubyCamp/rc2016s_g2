@@ -10,6 +10,7 @@ module FishGame
 	  	 @score = 0
 	  	 @time = Time.now
 	  end
+
 	  def play
 	  	Window.draw(0, 0, @bg_img)
 	  	Sprite.update(@chars)
