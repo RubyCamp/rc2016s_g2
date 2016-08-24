@@ -4,7 +4,7 @@ require_relative 'sprite_mo'
 module Planktongame
   class Director
     def initialize
-      @bg_img = Image.load("images/plancton/background-plankton.png")
+      @bg_img = Image.load("images/plankton/background-plankton.png")
       @chars = []
       @chars << Fishenemy.new(0, 0)
       @chars << Mo.new(700, rand(600))
