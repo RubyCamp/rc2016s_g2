@@ -5,7 +5,7 @@ module Scene1
   class Director
     def initialize
       @bg_img = Image.load("images/storyback/ftob.png")
-      @font=Font.new(32)      
+      @font=Font.new(32)
     end
 
     def play
@@ -16,5 +16,5 @@ module Scene1
       end
     end
   end
-  
+
 end
