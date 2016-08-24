@@ -14,4 +14,3 @@ Scene.add_scene(FishGame::Director.new,  :fishgame)
 Scene.add_scene(Scene2::Director.new,  :scene2)
 Scene.add_scene(BirdGame::Director.new,  :birdgame)
 Scene.add_scene(Ending::Director.new,  :ending)
-
