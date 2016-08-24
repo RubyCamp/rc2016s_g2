@@ -7,9 +7,10 @@ require_relative 'ending/director'
 require_relative 'planktonGame/director'
 
 Scene.add_scene(Title::Director.new,  :title)
-Scene.add_scene(Planktongame::Director.new,  :planktongame)
+Scene.add_scene(PlanktonGame::Director.new,  :planktongame)
 Scene.add_scene(Scene1::Director.new,  :scene1)
 Scene.add_scene(FishGame::Director.new,  :fishgame)
 Scene.add_scene(Scene2::Director.new,  :scene2)
 #bard
 Scene.add_scene(Ending::Director.new,  :ending)
+
