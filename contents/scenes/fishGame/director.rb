@@ -4,7 +4,7 @@ module FishGame
 	class Director
 	  def initialize
 	  	 @chars = []
-	  	 2.times { @chars << Bird.new(rand(100), -rand(400)+100, "images/bird/dove-1.png") }
+	  	 2.times { @chars << Bird.new(rand(100), -rand(400)+100, "images/bird/dove-down.png") }
 	  	 @chars << PlayerFish.new(300, 350, "images/fish/player-fish.png" )
 	  	 @bg_img = Image.load("images/fish/background-fish.png")
 	  	 @score = 0
