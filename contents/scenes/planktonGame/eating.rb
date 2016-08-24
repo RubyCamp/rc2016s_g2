@@ -6,13 +6,13 @@ module Eating
   class Director
     def initialize
       @bg_img = Image.load("images/plankton/eating.png")
-      @timer = 30 * 60
+      @timer = 3 * 60
     end
 
     def play
       Window.draw(0, 0, @bg_img)
       @timer -= 1
-      if @timer
+      if @timer==0
         Scene.set_current_scene(:scene1)
       end
     end
