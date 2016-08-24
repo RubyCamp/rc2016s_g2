@@ -1,13 +1,15 @@
 require_relative 'fish_enemy'
 require_relative 'sprite_mo'
+require_relative 'sprite_plankton'
 
-module Planktongame
+module PlanktonGame
   class Director
     def initialize
       @bg_img = Image.load("images/plankton/background-plankton.png")
       @chars = []
       @chars << Fishenemy.new(0, 0)
       @chars << Mo.new(700, rand(600))
+      @chars << Plankton.new
       #@timer = 30 * 60
       @repoptime = 100
       @repoptimer = @repoptime
