@@ -1,4 +1,4 @@
-# coding: shift_jis
+# coding: UTF-8
 
 module Scene2
 
@@ -8,10 +8,13 @@ module Scene2
       @bgm = Sound.new("sounds/title.wav")
       @bgm_played = false
       @font=Font.new(32)
+      @score = Score.new()
     end
 
     def play
       Window.draw(0, 0, @bg_img)
+      @total_score = @score.total.to_i
+      Window.draw_font(10,10,"あなたが前世までいきた時間：#{@total_score}秒",@font)
       unless @bgm_played
         @bgm.play
         @bgm_played = true
