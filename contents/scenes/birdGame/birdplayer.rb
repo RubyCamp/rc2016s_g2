@@ -5,6 +5,7 @@ class BirdPlayer < Sprite
     super
     @dx = 0
     @dy = 0
+    self.collision = [66,66,15]
   end
 
   def update
