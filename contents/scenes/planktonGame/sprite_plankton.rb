@@ -4,6 +4,7 @@ class Plankton < Sprite
 
   def initialize
     image = Image.load("images/plankton/new_virus(black).png")
+    @bgm = Sound.new("sounds/gamePlaying.wav")
     image.set_color_key(C_WHITE)
     @dy=0
     super(500,300,image)
