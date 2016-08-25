@@ -20,6 +20,17 @@ class PlayerFish < Sprite
 		else
 		  @dx = 0
 		end
+		if Input.key_down?(K_RIGHT)
+      @dx = 3
+      self.image = Image.load("images/fish/player-fish.png")
+      #image.set_color_key([10, 10, 10])
+    elsif Input.key_down?(K_LEFT)
+      @dx = -3
+      self.image = Image.load("images/fish/player-fish-left.png")
+      #image.set_color_key([10, 10, 10])
+    else
+      @dx = 0
+    end
 		self.x += @dx
 
 		if self.x <= 10
