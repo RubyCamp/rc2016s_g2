@@ -9,7 +9,7 @@ class Bullet < Sprite
     #角度を初期化(degで与えた値をradianに)
     @isUp = 2
     if isRight == @isUp
-      deg -= 40
+      deg -= 45
     end
     @rad = deg * Math::PI / 180
     @dx = 4 * isRight
