@@ -1,6 +1,6 @@
 class BirdPlayer < Sprite
   def initialize(x, y, image = nil)
-    image = Image.load("images/bird/dove.png") #相対パスはmain.rbからのものを指定
+    image = Image.load("images/bird/dove-right.png") #相対パスはmain.rbからのものを指定
     image.set_color_key([10, 10, 10])
     super
     @dx = 0
@@ -27,16 +27,16 @@ class BirdPlayer < Sprite
     self.y += @dy
     self.x += @dx
 
-    if self.y <= -30
-      self.y = -30
-    elsif self.y >= Window.height - 200
-      self.y = Window.height - 200
+    if self.y <= -20
+      self.y = -20
+    elsif self.y >= Window.height - 300
+      self.y = Window.height - 300
     end
 
-    if self.x <= -30
-      self.x = -30
-    elsif self.x >= Window.width - 200
-      self.x = Window.width - 200
+    if self.x <= -20
+      self.x = -20
+    elsif self.x >= Window.width - 100
+      self.x = Window.width - 100
     end
 
   end

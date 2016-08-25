@@ -1,3 +1,4 @@
+
 class Plankton < Sprite
 
   def initialize
@@ -21,16 +22,19 @@ class Plankton < Sprite
       self.y = -10
     elsif self.y >= Window.height - 20
       self.y = Window.height - 20 
-    end        
+    end      
   end
+
+
+
 
   # 敵に当たったとき
   def hit(obj)
   	self.x=self.x + obj.dx if obj.is_a?(Mo) # Moが当たったとき
   	#　Moのサイズは、256*256（デフォルト）
     if obj.is_a?(Fishenemy) #　Fishenemyが当たったとき
-      vanish
-      Scene.set_current_scene(:eating)
+      vanish # Moのオブジェクトを消す
+      Scene.set_current_scene(:eating) # 次のシーンへ
     end
   end
 end
