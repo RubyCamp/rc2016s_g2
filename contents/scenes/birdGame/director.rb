@@ -10,7 +10,7 @@ module BirdGame
       @bgm_played = false
       @chars = []
       @humans = []
-      @chars << BirdPlayer.new(100, 200)
+      @chars << BirdPlayer.new(300, 150)
       #左右を決める変数
       @isRight = 1
       @isLeft = -1
