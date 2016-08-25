@@ -40,4 +40,3 @@ class Plankton < Sprite
     end
   end
 end
-
