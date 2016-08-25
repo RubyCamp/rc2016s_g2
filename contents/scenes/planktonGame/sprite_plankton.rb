@@ -9,37 +9,37 @@ class Plankton < Sprite
     @dy=0
     super(500,300,image)
     @score = Score.new
+  
   end
 
   def update
-    if Input.key_down?(K_UP)
+    @score.start_time ||= Time.now
+    if Input.key_down?(K_UP) 
        @dy = -1
-     elsif Input.key_down?(K_DOWN)
-       @dy = 1
+     elsif Input.key_down?(K_DOWN) 
+       @dy = 1 
      else @dy = 0
     end
 
-    self.y += @dy #移動
+    self.y += @dy #　移動
 
     if self.y <= -10 # 範囲の設定
       self.y = -10
     elsif self.y >= Window.height - 20
-      self.y = Window.height - 20
-    end
+      self.y = Window.height - 20 
+    end      
   end
-
-
-
 
   # 敵に当たったとき
   def hit(obj)
   	self.x=self.x + obj.dx if obj.is_a?(Mo) # Moが当たったとき
-  	#Moのサイズは、256*256（デフォルト）
-    if obj.is_a?(Fishenemy) #Fishenemyが当たったとき
+  	#　Moのサイズは、256*256（デフォルト）
+    if obj.is_a?(Fishenemy) #　Fishenemyが当たったとき
       vanish # Moのオブジェクトを消す
       @pscore = @score.end
-      @bgm.stop
+ #     p @pscore
       Scene.set_current_scene(:eating) # 次のシーンへ
     end
   end
 end
+

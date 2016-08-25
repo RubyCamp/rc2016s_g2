@@ -10,6 +10,7 @@ module Ending
 
     def play
       Window.draw(0, 0, @bg_img)
+    #  p Plankton.pscore
 #      Window.draw_font(10, 10, "プランクトンゲーム得点: Plankton.pscore", @font)
       if Input.keyPush?(K_RETURN)
         exit
