@@ -26,6 +26,13 @@ class PlayerFish < Sprite
 		# self.x += @dx
 	end
 
+	def hit(obj)
+		if obj.is_a?(Bird)
+		self.vanish 
+		Scene.set_current_scene(:scene2)
+		end
+	end
+
 	def score
 		@time += 1
 		@score += @time
