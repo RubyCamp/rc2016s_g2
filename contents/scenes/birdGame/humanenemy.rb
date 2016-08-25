@@ -1,12 +1,19 @@
 class HumanEnemy < Sprite
   attr_reader :bullets
-  def initialize(x, y, image = nil)
-    image = Image.load("images/human/hunter-right.png") #相対パスはmain.rbからのものを指定
+  def initialize(x, y, image = nil, isRight)
+    if isRight == 1
+      image = Image.load("images/human/hunter-right.png") #相対パスはmain.rbからのものを指定
+    else
+      image = Image.load("images/human/hunter-left.png") #相対パスはmain.rbからのものを指定
+    end
     image.set_color_key([248, 247, 243])
     super
     @dx = 2
+    @isRight = isRight
     @bullets = []
-    @bullets << Bullet.new(self.x + 100, self.y + 20, -45)
+    @defx = 0
+    @defx = 100 if @isRight == 1
+    @bullets << Bullet.new(self.x + @isRight, self.y + 20, -45, @isRight)
     @repoptime = 50
     @repoptimer = @repoptime
   end
@@ -23,7 +30,7 @@ class HumanEnemy < Sprite
       #if @repoptime <= 10
       #  @repoptime = 10
       #end
-      @bullets << Bullet.new(self.x + 100, self.y + 20, rand(-45..0))
+      @bullets << Bullet.new(self.x + @defx, self.y + 20, rand(-40..-10), @isRight)
     end
   end
 

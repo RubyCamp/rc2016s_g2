@@ -1,11 +1,11 @@
 class Bullet < Sprite
-  def initialize(x, y, image = nil, deg)
+  def initialize(x, y, image = nil, deg, isRight)
     image = Image.new(10, 10).circleFill(5,5,5,[0,0,0]) #半径5pxの円
     image.set_color_key([248, 247, 243])
     super
     #角度を初期化(degで与えた値をradianに)
     @rad = deg * Math::PI / 180
-    @dx = 5
+    @dx = 5 * isRight
     @dy = 5
   end
 

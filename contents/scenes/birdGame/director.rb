@@ -9,8 +9,11 @@ module BirdGame
       @chars = []
       @humans = []
       @chars << BirdPlayer.new(200, 200)
-      @humans << HumanEnemy.new(600, 380)
-      @humans << HumanEnemy.new(60, 380)
+      #左右を決める変数
+      @isRight = 1
+      @isLeft = -1
+      @humans << HumanEnemy.new(650, 380, @isLeft)
+      @humans << HumanEnemy.new(60, 380, @isRight)
       #@chars << Bullet.new(120, 400, -45)
       #@timer = 30 * 60
       #@repoptime = 50
