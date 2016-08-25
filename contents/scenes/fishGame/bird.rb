@@ -7,6 +7,7 @@ class Bird < Sprite
 		#image.set_color_key(C_WHITE)
 		super
 		@y = 1
+		self.collision=[67,150,138,91,0,91]
 	end
 
 	def update

@@ -8,6 +8,7 @@ require_relative 'planktonGame/director'
 require_relative 'planktonGame/eating'
 require_relative 'birdGame/director'
 require_relative 'fishGame/eating2'
+require_relative 'score'
 
 Scene.add_scene(Title::Director.new,  :title)
 Scene.add_scene(PlanktonGame::Director.new,  :planktongame)

@@ -13,6 +13,8 @@ module PlanktonGame
       #@timer = 30 * 60
       @repoptime = 100
       @repoptimer = @repoptime
+      @bgm = Sound.new("sounds/gamePlaying.wav")
+      @bgm_played = false
     end
 
     def play
@@ -21,6 +23,10 @@ module PlanktonGame
       Sprite.check(@chars, @chars)  #第一引数はあたる側、第二引数はあてられる側
       Sprite.draw(@chars)
       Sprite.clean(@chars)
+      unless @bgm_played
+        @bgm.play
+        @bgm_played = true
+      end
       #@timer -= 1
      # if @timer
      #   Scene.set_current_scene(:scene1)
