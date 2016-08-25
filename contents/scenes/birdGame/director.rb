@@ -6,6 +6,8 @@ module BirdGame
   class Director
     def initialize
       @bg_img = Image.load("images/bird/background-bird.png")
+      @bgm = Sound.new("sounds/gamePlaying.wav")
+      @bgm_played = false
       @chars = []
       @humans = []
       @chars << BirdPlayer.new(200, 200)
@@ -24,6 +26,10 @@ module BirdGame
       Window.draw(0, 0, @bg_img)
       Sprite.update(@chars)
       Sprite.update(@humans)
+      unless @bgm_played
+        @bgm.play
+        @bgm_played = true
+      end
       @humans.each do |human|
         Sprite.update(human.bullets)
         Sprite.draw(human.bullets)

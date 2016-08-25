@@ -3,9 +3,9 @@ class Mo < Sprite
 
   def initialize(x, y, image = nil)
     image = Image.load("images/seamo/mo2.png")
-    image.set_color_key(C_WHITE) #　白色を透過
+    image.set_color_key(C_WHITE) #白色を透過
     super #superクラスを呼び出す（引数なし）
-    @dx = -1  
+    @dx = -1
     self.collision=[0,50,40,25,40,75] #Moの衝突範囲の設定
   end
 

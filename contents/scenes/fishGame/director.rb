@@ -5,13 +5,14 @@ module FishGame
 	class Director
 	  def initialize
 	  	 @chars = []
-	  	 @bg_img = Image.load("images/fish/background-fish.png") 
+	  	 @bg_img = Image.load("images/fish/background-fish.png")
+	  	 @bgm = Sound.new("sounds/gamePlaying.wav")
 	  	 @chars << PlayerFish.new(300, 350, "images/fish/player-fish.png" )
 	  	 @chars << Bird.new(rand(800), 0)
 	  	 @score = 0
 	  	 @time = Time.now
 	  	 @repoptime = 100
-	  	 @repoptimer = @repoptime 
+	  	 @repoptimer = @repoptime
 	  end
 
 	  def play
@@ -19,6 +20,10 @@ module FishGame
 	  	Sprite.update(@chars)
 	  	Sprite.check(@chars,@chars)
 	  	Sprite.draw(@chars)
+	  	unless @bgm_played
+          @bgm.play
+          @bgm_played = true
+        end
 
 	  	@repoptimer -= 1
         if @repoptimer <= 0
