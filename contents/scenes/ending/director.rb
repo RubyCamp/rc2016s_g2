@@ -6,12 +6,14 @@ module Ending
     def initialize
       @bg_img = Image.load("images/storyback/end.png")
       @font=Font.new(32)
+      @score = Score.new
     end
 
     def play
       Window.draw(0, 0, @bg_img)
-    #  p Plankton.pscore
-#      Window.draw_font(10, 10, "プランクトンゲーム得点: Plankton.pscore", @font)
+       @total_score = @score.total.to_i
+      # p @total_score
+      Window.draw_font(10, 10, "得点: #{@total_score} ", @font)
       if Input.keyPush?(K_RETURN)
         exit
       end
