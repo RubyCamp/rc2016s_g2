@@ -1,7 +1,7 @@
 class HumanEnemy < Sprite
   attr_reader :bullets
   def initialize(x, y, image = nil)
-    image = Image.load("images/human/human1_min.png") #相対パスはmain.rbからのものを指定
+    image = Image.load("images/human/hunter-right.png") #相対パスはmain.rbからのものを指定
     image.set_color_key([248, 247, 243])
     super
     @dx = 2
