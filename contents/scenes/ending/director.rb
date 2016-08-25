@@ -1,3 +1,5 @@
+# coding: UTF-8
+
 module Ending
 
   class Director
@@ -9,6 +11,7 @@ module Ending
     def play
       Window.draw(0, 0, @bg_img)
       Window.draw_font(0,0,"PUSH ENTER",@font)
+#      Window.draw_font(10, 10, "プランクトンゲーム得点: Plankton.pscore", @font)
       if Input.keyPush?(K_RETURN)
         exit
       end

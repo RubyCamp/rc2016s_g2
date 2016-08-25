@@ -2,6 +2,7 @@ require 'dxruby'
 
 require_relative 'scene'
 require_relative 'scenes/load_scenes'
+require_relative 'scenes/score'
 
 Window.caption = "RubyCamp Reincarnation"
 Window.width   = 800
