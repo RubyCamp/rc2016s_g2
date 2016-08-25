@@ -54,7 +54,7 @@ class BirdPlayer < Sprite
     if obj.is_a?(Bullet) #　Fishenemyが当たったとき
       self.vanish
       @bscore = @score.end
-      Scene.set_current_scene(:ending) # 次のシーンへ
+      Scene.set_current_scene(:br) # 次のシーンへ
     end
   end
 
