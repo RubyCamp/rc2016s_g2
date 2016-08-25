@@ -37,12 +37,8 @@ class Plankton < Sprite
   	#Moのサイズは、256*256（デフォルト）
     if obj.is_a?(Fishenemy) #Fishenemyが当たったとき
       vanish # Moのオブジェクトを消す
-<<<<<<< HEAD
       @pscore = @score.end
-      p @pscore
-=======
       @bgm.stop
->>>>>>> origin/staging
       Scene.set_current_scene(:eating) # 次のシーンへ
     end
   end
