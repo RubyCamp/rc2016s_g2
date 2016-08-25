@@ -11,7 +11,7 @@ module Scene1
     def play
       Window.draw(0, 0, @bg_img)
       if Input.keyPush?(K_RETURN)
-        Scene.set_current_scene(:eating2)
+        Scene.set_current_scene(:fishgame)
       end
     end
   end

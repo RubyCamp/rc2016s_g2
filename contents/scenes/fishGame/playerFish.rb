@@ -29,7 +29,7 @@ class PlayerFish < Sprite
 	def hit(obj)
 		if obj.is_a?(Bird)
 		self.vanish 
-		Scene.set_current_scene(:scene2)
+		Scene.set_current_scene(:eating2)
 		end
 	end
 
