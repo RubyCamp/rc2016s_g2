@@ -38,6 +38,7 @@ class Plankton < Sprite
       vanish # Moのオブジェクトを消す
       @pscore = @score.end
  #     p @pscore
+      @bgm.stop
       Scene.set_current_scene(:eating) # 次のシーンへ
     end
   end
