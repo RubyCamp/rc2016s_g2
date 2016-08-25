@@ -3,8 +3,10 @@ class HumanEnemy < Sprite
   def initialize(x, y, image = nil, isRight)
     if isRight == 1
       image = Image.load("images/human/hunter-right.png") #相対パスはmain.rbからのものを指定
-    else
+    elsif isRight == -1
       image = Image.load("images/human/hunter-left.png") #相対パスはmain.rbからのものを指定
+    else
+      image = Image.load("images/human/hunter-right.png")
     end
     image.set_color_key([248, 247, 243])
     super

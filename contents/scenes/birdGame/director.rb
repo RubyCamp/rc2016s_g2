@@ -12,11 +12,20 @@ module BirdGame
       #左右を決める変数
       @isRight = 1
       @isLeft = -1
+      @isUp = 2
       @humans << HumanEnemy.new(650, 380, @isLeft)
       @humans << HumanEnemy.new(60, 380, @isRight)
+      @enemypoptimer = 60 * 5
+      @isEnemypop = false
     end
 
     def play
+      if @enemypoptimer <= 0
+        @humans << HumanEnemy.new(250, 380, @isUp)
+        @enemypoptimer = 60 * 1
+      else
+        @enemypoptimer -= 1
+      end
       Window.draw(0, 0, @bg_img)
       Sprite.update(@chars)
       Sprite.update(@humans)
