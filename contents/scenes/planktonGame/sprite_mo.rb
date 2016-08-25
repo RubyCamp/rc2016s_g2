@@ -3,15 +3,14 @@ class Mo < Sprite
 
   def initialize(x, y, image = nil)
     image = Image.load("images/seamo/mo2.png")
-    image.set_color_key(C_WHITE)
-    super
-    @dx = -1
+    image.set_color_key(C_WHITE) #　白色を透過
+    super #superクラスを呼び出す（引数なし）
+    @dx = -1  
+    self.collision=[0,50,40,25,40,75] #Moの衝突範囲の設定
   end
 
   def update
-    self.x += @dx
-    #self.x += (rand(3) + 1) * @dx
-    #@dx = -@dx if self.x > (Window.width - self.image.width) || self.x < 0
+    self.x += @dx # Moが左方向に移動する。
   end
 
   def hit(obj)
