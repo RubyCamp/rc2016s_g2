@@ -3,6 +3,7 @@ require_relative'humanenemy'
 require_relative'bullet'
 
 module BirdGame
+ # attr_reader :bscore 
   class Director
     def initialize
       @bg_img = Image.load("images/bird/background-bird.png")
@@ -10,7 +11,7 @@ module BirdGame
       @bgm_played = false
       @chars = []
       @humans = []
-      @chars << BirdPlayer.new(100, 200)
+      @chars << BirdPlayer.new(300, 150)
       #左右を決める変数
       @isRight = 1
       @isLeft = -1
@@ -19,6 +20,7 @@ module BirdGame
       @humans << HumanEnemy.new(60, 380, @isRight)
       @enemypoptimer = 60 * 5
       @isEnemypop = false
+ #     @score = Score.new
     end
 
     def play
