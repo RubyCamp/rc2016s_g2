@@ -27,7 +27,7 @@ class Bullet < Sprite
   end
 
   def shot(obj)
-    if obj.is_a?(BirdPlayer) #　Fishenemyが当たったとき
+    if obj.is_a?(BirdPlayer) #　鳥に弾があたったとき
       obj.vanish
       Scene.set_current_scene(:ending) # 次のシーンへ
     end

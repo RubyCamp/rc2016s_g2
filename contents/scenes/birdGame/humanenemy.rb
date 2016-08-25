@@ -11,20 +11,25 @@ class HumanEnemy < Sprite
     image.set_color_key([248, 247, 243])
     super
     @dx = 2
+    @isUp = 2
     @isRight = isRight
     @bullets = []
     @defx = 0
     @defx = 100 if @isRight == 1
-    #@bullets << Bullet.new(self.x + @isRight, self.y + 20, -45, @isRight)
     @repoptime = 50
     @repoptimer = @repoptime
   end
 
   def update
+    #時間差で生まれた人のときのみ移動
+    if @isRight == @isUp
+      self.x += @dx
+    end
     #1割の確率で移動方向変更
-    if rand(9) == 5
+    if rand(20) == 5
       @dx = -@dx
     end
+
     @repoptimer -= 1
     if @repoptimer <= 0
       @repoptimer = @repoptime
