@@ -14,8 +14,6 @@ class Score
 		@end_time=Time.now
 		@score = @end_time - @start_time
 		@@total = @@total + @score
-		p @score
-		p @@total
 	end
 
 	def total

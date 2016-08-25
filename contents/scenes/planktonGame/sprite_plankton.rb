@@ -1,6 +1,8 @@
 
 class Plankton < Sprite
   attr_reader :pscore
+  attr_reader :dy
+
 
   def initialize
     image = Image.load("images/plankton/new_virus(black).png")

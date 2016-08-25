@@ -25,7 +25,7 @@ module BirdGame
 
     def play
       if @enemypoptimer <= 0
-        @humans << HumanEnemy.new(250, 380, @isUp)
+        @humans << HumanEnemy.new(150, 380, @isUp)
         @enemypoptimer = 60 * 4
       else
         @enemypoptimer -= 1
