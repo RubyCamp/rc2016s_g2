@@ -12,7 +12,7 @@ module Scene1
       Window.draw(0, 0, @bg_img)
       Window.draw_font(600,500,"PUSH ENTER",@font)
       if Input.keyPush?(K_RETURN)
-        Scene.set_current_scene(:scene2)
+        Scene.set_current_scene(:eating2)
       end
     end
   end
