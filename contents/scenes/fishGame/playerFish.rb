@@ -3,6 +3,7 @@ class PlayerFish < Sprite
 
 	def initialize(x, y, image_file)
 		image = Image.load(image_file)
+	  	@bgm = Sound.new("sounds/gamePlaying.wav")
 		@dx = 0
 		super(x,y, image)
 		self.collision=[0,27,99,72]
@@ -29,7 +30,8 @@ class PlayerFish < Sprite
 
 	def hit(obj)
 		if obj.is_a?(Bird)
-		self.vanish 
+		self.vanish
+		@bgm.stop
 		Scene.set_current_scene(:eating2)
 		end
 	end
