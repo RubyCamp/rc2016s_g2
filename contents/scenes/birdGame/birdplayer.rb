@@ -23,6 +23,12 @@ class BirdPlayer < Sprite
       @dy = 0
     end
 
+    if @dy == 3 && Input.key_down?(K_LSHIFT)
+      @dy -= 2
+    elsif @dy == -3 && Input.key_down?(K_LSHIFT)
+      @dy += 2
+    end
+
     if Input.key_down?(K_RIGHT)
       @dx = 3
       self.image = Image.load("images/bird/dove-right.png")
@@ -33,6 +39,12 @@ class BirdPlayer < Sprite
       #image.set_color_key([10, 10, 10])
     else
       @dx = 0
+    end
+
+    if @dx == 3 && Input.key_down?(K_LSHIFT)
+      @dx -= 2
+    elsif @dx == -3 && Input.key_down?(K_LSHIFT)
+        @dx += 2
     end
 
     self.y += @dy
