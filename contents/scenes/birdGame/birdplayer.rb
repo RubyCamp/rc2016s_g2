@@ -3,6 +3,7 @@ class BirdPlayer < Sprite
 
   def initialize(x, y, image = nil)
     @imagepath = ["images/bird/dove-left.png", "images/bird/dove-right.png"]
+    @bgm = Sound.new("sounds/gamePlaying.wav")
     image = Image.load("images/bird/dove-right.png") #相対パスはmain.rbからのものを指定
     image.set_color_key([10, 10, 10])
     @score=Score.new
@@ -54,6 +55,7 @@ class BirdPlayer < Sprite
     if obj.is_a?(Bullet) #　Fishenemyが当たったとき
       self.vanish
       @bscore = @score.end
+      @bgm.stop
       Scene.set_current_scene(:br) # 次のシーンへ
     end
   end

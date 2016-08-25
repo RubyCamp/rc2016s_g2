@@ -3,7 +3,7 @@ require_relative'humanenemy'
 require_relative'bullet'
 
 module BirdGame
- # attr_reader :bscore 
+ # attr_reader :bscore
   class Director
     def initialize
       @bg_img = Image.load("images/bird/background-bird.png")
