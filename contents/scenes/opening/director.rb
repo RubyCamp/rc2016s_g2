@@ -1,4 +1,4 @@
-# coding: shift_jis
+# coding: UTF-8
 
 module Title
 
