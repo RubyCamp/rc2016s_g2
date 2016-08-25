@@ -9,10 +9,10 @@ class Plankton < Sprite
   end
 
   def update
-    if Input.key_down?(K_UP) 
+    if Input.key_down?(K_UP)
        @dy = -1
-     elsif Input.key_down?(K_DOWN) 
-       @dy = 1 
+     elsif Input.key_down?(K_DOWN)
+       @dy = 1
      else @dy = 0
     end
 
@@ -21,8 +21,8 @@ class Plankton < Sprite
     if self.y <= -10 # 範囲の設定
       self.y = -10
     elsif self.y >= Window.height - 20
-      self.y = Window.height - 20 
-    end      
+      self.y = Window.height - 20
+    end
   end
 
 
@@ -38,4 +38,3 @@ class Plankton < Sprite
     end
   end
 end
-

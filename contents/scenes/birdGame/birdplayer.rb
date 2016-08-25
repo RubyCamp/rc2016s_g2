@@ -38,11 +38,13 @@ class BirdPlayer < Sprite
     elsif self.x >= Window.width - 100
       self.x = Window.width - 100
     end
-
   end
 
   def hit(obj)
-    #image = Image.load("images/fish/fishenemy_proto2.png") #相対パスはmain.rbからのものを指定
-    #image.set_color_key([0, 0, 0])
+    #if obj.is_a?(BirdPlayer) #　Fishenemyが当たったとき
+    #  self.vanish
+    #  Scene.set_current_scene(:eating) # 次のシーンへ
+    #end
   end
+
 end

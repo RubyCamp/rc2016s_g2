@@ -21,4 +21,11 @@ class Bullet < Sprite
     #image = Image.load("images/fish/fishenemymo2.png") #相対パスはmain.rbからのものを指定
     #image.set_color_key([0, 0, 0])
   end
+
+  def shot(obj)
+    if obj.is_a?(BirdPlayer) #　Fishenemyが当たったとき
+      obj.vanish
+      Scene.set_current_scene(:ending) # 次のシーンへ
+    end
+  end
 end

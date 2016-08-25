@@ -13,7 +13,7 @@ class HumanEnemy < Sprite
     @bullets = []
     @defx = 0
     @defx = 100 if @isRight == 1
-    @bullets << Bullet.new(self.x + @isRight, self.y + 20, -45, @isRight)
+    #@bullets << Bullet.new(self.x + @isRight, self.y + 20, -45, @isRight)
     @repoptime = 50
     @repoptimer = @repoptime
   end
@@ -26,10 +26,10 @@ class HumanEnemy < Sprite
     @repoptimer -= 1
     if @repoptimer <= 0
       @repoptimer = @repoptime
-      #@repoptime -= 2
-      #if @repoptime <= 10
-      #  @repoptime = 10
-      #end
+      @repoptime += rand(-10..10) - 2
+      if @repoptime <= 10
+        @repoptime = 10
+      end
       @bullets << Bullet.new(self.x + @defx, self.y + 20, rand(-40..-10), @isRight)
     end
   end
