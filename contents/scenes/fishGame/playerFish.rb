@@ -5,13 +5,14 @@ class PlayerFish < Sprite
 		image = Image.load(image_file)
 		@dx = 0
 		super(x,y, image)
+		self.collision=[0,27,99,72]
 	end
 
 	def update
 		if Input.key_down?(K_LEFT)
-		  @dx = -1
+		  @dx = -3
 		elsif Input.key_down?(K_RIGHT)
-		  @dx = 1
+		  @dx = 3
 		else
 		  @dx = 0
 		end
