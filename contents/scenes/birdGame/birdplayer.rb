@@ -1,13 +1,17 @@
 class BirdPlayer < Sprite
+  attr_reader :bscore
+
   def initialize(x, y, image = nil)
     image = Image.load("images/bird/dove-right.png") #相対パスはmain.rbからのものを指定
     image.set_color_key([10, 10, 10])
+    @score=Score.new
     super
     @dx = 0
     @dy = 0
   end
 
   def update
+    @score.start_time ||= Time.now
     if Input.key_down?(K_UP)
       @dy = -3
     elsif Input.key_down?(K_DOWN)
@@ -41,10 +45,11 @@ class BirdPlayer < Sprite
   end
 
   def hit(obj)
-    #if obj.is_a?(BirdPlayer) #　Fishenemyが当たったとき
-    #  self.vanish
-    #  Scene.set_current_scene(:eating) # 次のシーンへ
-    #end
+    if obj.is_a?(Bullet) #　Fishenemyが当たったとき
+      self.vanish
+      @bscore = @score.end
+      Scene.set_current_scene(:ending) # 次のシーンへ
+    end
   end
 
 end
