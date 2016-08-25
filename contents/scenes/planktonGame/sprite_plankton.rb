@@ -1,5 +1,6 @@
 
 class Plankton < Sprite
+  attr_reader :pscore
 
   def initialize
     image = Image.load("images/plankton/new_virus(black).png")
@@ -7,6 +8,7 @@ class Plankton < Sprite
     image.set_color_key(C_WHITE)
     @dy=0
     super(500,300,image)
+    @score = Score.new
   end
 
   def update
@@ -35,7 +37,12 @@ class Plankton < Sprite
   	#Moのサイズは、256*256（デフォルト）
     if obj.is_a?(Fishenemy) #Fishenemyが当たったとき
       vanish # Moのオブジェクトを消す
+<<<<<<< HEAD
+      @pscore = @score.end
+      p @pscore
+=======
       @bgm.stop
+>>>>>>> origin/staging
       Scene.set_current_scene(:eating) # 次のシーンへ
     end
   end
