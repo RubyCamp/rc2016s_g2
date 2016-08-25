@@ -9,6 +9,7 @@ require_relative 'planktonGame/eating'
 require_relative 'birdGame/director'
 require_relative 'fishGame/eating2'
 require_relative 'score'
+require_relative 'birdGame/br'
 
 Scene.add_scene(Title::Director.new,  :title)
 Scene.add_scene(PlanktonGame::Director.new,  :planktongame)
@@ -18,4 +19,5 @@ Scene.add_scene(FishGame::Director.new,  :fishgame)
 Scene.add_scene(Eating2::Director.new,  :eating2)
 Scene.add_scene(Scene2::Director.new,  :scene2)
 Scene.add_scene(BirdGame::Director.new,  :birdgame)
+Scene.add_scene(Br::Director.new,  :br)
 Scene.add_scene(Ending::Director.new,  :ending)
