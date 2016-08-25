@@ -6,16 +6,20 @@ class HumanEnemy < Sprite
     elsif isRight == -1
       image = Image.load("images/human/hunter-left.png") #相対パスはmain.rbからのものを指定
     else
-      image = Image.load("images/human/hunter-right.png")
+      image = Image.load("images/human/hitoboat.png")
+      y -= 150
     end
-    image.set_color_key([248, 247, 243])
+    image.set_color_key([255, 255, 255])
     super
     @dx = 2
     @isUp = 2
     @isRight = isRight
     @bullets = []
     @defx = 0
+    @defy = 20
     @defx = 100 if @isRight == 1
+    @defx = 200 if @isRight == 2
+    @defy = 120 if @isRight == 2
     @repoptime = 50
     @repoptimer = @repoptime
   end
@@ -37,7 +41,7 @@ class HumanEnemy < Sprite
       if @repoptime <= 10
         @repoptime = 10
       end
-      @bullets << Bullet.new(self.x + @defx, self.y + 20, rand(-40..-10), @isRight)
+      @bullets << Bullet.new(self.x + @defx, self.y + @defy, rand(-50..-10), @isRight)
     end
   end
 
