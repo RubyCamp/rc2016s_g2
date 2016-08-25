@@ -21,6 +21,7 @@ class HumanEnemy < Sprite
     @defx = 200 if @isRight == 2
     @defy = 120 if @isRight == 2
     @repoptime = 50
+    @repoptime = 30 if @isRight == -1
     @repoptimer = @repoptime
   end
 
