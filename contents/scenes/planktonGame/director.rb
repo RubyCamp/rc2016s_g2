@@ -43,7 +43,6 @@ module PlanktonGame
       @repoptimer -= 1
        if @timer <= 0
           @player_pos_logs = @plankton.y
-          p @player_pos_logs
           @chars << Mo.new(700, @player_pos_logs )
         end
 
