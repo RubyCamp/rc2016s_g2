@@ -9,8 +9,8 @@ class Bullet < Sprite
       deg -= 40
     end
     @rad = deg * Math::PI / 180
-    @dx = 5 * isRight
-    @dy = 5
+    @dx = 3 * isRight
+    @dy = 3
   end
 
   def update

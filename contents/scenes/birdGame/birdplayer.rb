@@ -1,5 +1,6 @@
 class BirdPlayer < Sprite
   def initialize(x, y, image = nil)
+    @imagepath = ["images/bird/dove-left.png", "images/bird/dove-right.png"]
     image = Image.load("images/bird/dove-right.png") #相対パスはmain.rbからのものを指定
     image.set_color_key([10, 10, 10])
     super
@@ -18,8 +19,12 @@ class BirdPlayer < Sprite
 
     if Input.key_down?(K_RIGHT)
       @dx = 3
+      self.image = Image.load("images/bird/dove-right.png")
+      #image.set_color_key([10, 10, 10])
     elsif Input.key_down?(K_LEFT)
       @dx = -3
+      self.image = Image.load("images/bird/dove-left.png")
+      #image.set_color_key([10, 10, 10])
     else
       @dx = 0
     end
